@@ -1,8 +1,8 @@
 # C# PAyfull SDK Alpha
 ## Still In Alpha Need Testing
 ## Installing
-1. But In Visual Studi 
-##How Tou Use
+1. Put In Visual Studio
+## How Tou Use
 ```
     Config config = new Config
     {
