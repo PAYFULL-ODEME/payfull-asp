@@ -20,7 +20,7 @@ namespace PayfullApi_sdk.App_Code.Requests
         {
             this.CreateRequest();
             string response = Request.Send(base.endpoint, this.paramss);
-            object responseData = Response.ProcessResponse(response);
+            string responseData = Response.ProcessTHDResponse(response);
             return responseData;
         }
     }

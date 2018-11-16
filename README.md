@@ -40,5 +40,19 @@
     };
     sale.SetCustomerInfo(customer);
     var response = sale.Execute();
+    Sale3D sale3d = new Sale3D(config)
+    {
+        PaymentTitle = "Payment Title",
+        PassiveData = "PassiveData",
+        Currency = "TRY",
+        Total = "13.00",
+        BankId = "Akbank",
+        Gateway = "10001",
+        Installment = "1",
+        MerchantTrxId = "xxx-0411684-0354354",
+        ReturnUrl= "/Home/THDRespones"
+    };
+    sale3d.SetCustomerInfo(customer);
+    var response = sale3d.Execute();
 ```
 Thanks For Using PayFull

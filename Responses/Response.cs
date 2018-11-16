@@ -10,5 +10,9 @@ namespace PayfullApi_sdk.App_Code.Responses
             var responseData = JsonConvert.DeserializeObject(response);
             return responseData;
         }
+        public static string ProcessTHDResponse(string response)
+        {
+            return response;
+        }
     }
 }
