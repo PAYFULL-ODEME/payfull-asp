@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace PayfullApi_sdk.App_Code.Models
+﻿namespace PayfullApi_sdk.App_Code.Models
 {
     public class RequestType
     {

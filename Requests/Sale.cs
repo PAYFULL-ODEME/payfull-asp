@@ -13,14 +13,13 @@ namespace PayfullApi_sdk.App_Code.Requests
         private string bankId;
         private string gateway;
 
-
-        public string PaymentTitle { get; set; }
-        public string PassiveData { get; set; }
-        public string Currency { get; set; }
-        public string Total { get; set; }
-        public string Installment { get; set; }
-        public string BankId { get; set; }
-        public string Gateway { get; set; }
+        public string PaymentTitle { get { return this.paymentTitle; } set { this.paymentTitle = value; } }
+        public string PassiveData { get { return this.passiveData; } set { this.passiveData = value; } }
+        public string Currency { get { return this.currency; } set { this.currency = value; } }
+        public string Total { get { return this.total; } set { this.total = value; } }
+        public string Installment { get { return this.installment; } set { this.installment = value; } }
+        public string BankId { get { return this.bankId; } set { this.bankId = value; } }
+        public string Gateway { get { return this.gateway; } set { this.gateway = value; } }
         public string MerchantTrxId { get { return this.merchantTrxId; } set { this.merchantTrxId = value; } }
         public Sale(Config config) : base(config,TYPE)
         {
@@ -44,13 +43,13 @@ namespace PayfullApi_sdk.App_Code.Requests
         }
         protected void CreateRequest()
         {
-            this.paramss.Add("payment_title", this.PaymentTitle);
-            this.paramss.Add("passive_data", this.PassiveData);
-            this.paramss.Add("currency", this.Currency);
-            this.paramss.Add("total", this.Total);
-            this.paramss.Add("installments", this.Installment);
-            this.paramss.Add("bank_id", this.BankId);
-            this.paramss.Add("gateway", this.Gateway);
+            this.paramss.Add("payment_title", this.paymentTitle);
+            this.paramss.Add("passive_data", this.passiveData);
+            this.paramss.Add("currency", this.currency);
+            this.paramss.Add("total", this.total);
+            this.paramss.Add("installments", this.installment);
+            this.paramss.Add("bank_id", this.bankId);
+            this.paramss.Add("gateway", this.gateway);
             if (this.MerchantTrxId!=null)
             {
                 this.paramss.Add("merchant_trx_id", this.MerchantTrxId);

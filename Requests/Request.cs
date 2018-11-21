@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 
 namespace PayfullApi_sdk.App_Code.Requests
 {
@@ -22,9 +19,10 @@ namespace PayfullApi_sdk.App_Code.Requests
         protected string type;
         protected string merchantTrxId;
         public string Param { get { return this.paramss["hash"]; } }
+        public string Lang { get { return this.language; } set { this.language = value; } }
         public Request(Config config, string type)
         {
-            this.paramss.Add("type", type);
+            this.paramss.Add("type", type)
             this.merchant = config.ApiKey;
             this.clientIp = this.GetIPAddress();
             this.password = config.ApiSecret;
