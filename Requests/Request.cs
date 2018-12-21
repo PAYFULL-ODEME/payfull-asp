@@ -22,7 +22,7 @@ namespace PayfullApi_sdk.App_Code.Requests
         public string Lang { get { return this.language; } set { this.language = value; } }
         public Request(Config config, string type)
         {
-            this.paramss.Add("type", type)
+            this.paramss.Add("type", type);
             this.merchant = config.ApiKey;
             this.clientIp = this.GetIPAddress();
             this.password = config.ApiSecret;
@@ -41,8 +41,8 @@ namespace PayfullApi_sdk.App_Code.Requests
                     return addresses[0];
                 }
             }
-            return "192.168.0.1";
-            //return context.Request.ServerVariables["REMOTE_ADDR"];
+            //return "192.168.0.1";
+            return context.Request.ServerVariables["REMOTE_ADDR"];
         }
         protected static string GenerateHash(Dictionary<string, string> paramss, string password)
         {
@@ -60,7 +60,7 @@ namespace PayfullApi_sdk.App_Code.Requests
         private static string HashHmac(string message, string secret)
         {
             Encoding encoding = Encoding.UTF8;
-            using (HMACSHA1 hmac = new HMACSHA1(encoding.GetBytes(secret)))
+            using (HMACSHA256 hmac = new HMACSHA256(encoding.GetBytes(secret)))
             {
                 var msg = encoding.GetBytes(message);
                 var hash = hmac.ComputeHash(msg);
